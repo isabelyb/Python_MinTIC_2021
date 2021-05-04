@@ -97,3 +97,23 @@ perimeter = 38*4
 
 print("El área del cuadrado es", area, " metros cuadrados \nEl perímetro del cuadrado es", perimeter, "metros")
 
+# Llamando una función de otro módulo
+
+import fibo
+
+fibo.fib(100)
+
+import fibo as fib2
+
+fib2.fib2(8)
+
+from fibo import fib
+
+fib(10)
+
+from fibo import fib2 as fb 
+
+fb(10)
+
+# Ahora sí, el ejemplo MinTIC
+
