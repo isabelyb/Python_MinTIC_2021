@@ -83,6 +83,7 @@ import statistics
 
 list1 = [10, 4, 5.5, 67]
 result4 = statistics.mean(list1)
+
 print("Resultado 4: El promedio de estos números es: ", result4)
 
     # área y perímetro de un cuadrado :  L = 38 m
