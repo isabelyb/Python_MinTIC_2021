@@ -15,4 +15,3 @@ def fib2(n):   # return Fibonacci series up to n
         a, b = b, a+b
     return print(result)
 
-
