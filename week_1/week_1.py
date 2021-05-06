@@ -117,13 +117,10 @@ fb(10)
 
 # Ahora sí, el ejemplo MinTIC
 
-from module import short_greeting, long_greeting
+from module import long_greeting, short_greeting
 
-name = input("Ingrese su nombre: ")
-sentence = short_greeting(name)
-print(sentence)
 
-name = input("Ingrese su nombre: ")
-sentence = long_greeting(name) 
-print(sentence)
+long_greeting("Mario")
+
+short_greeting("Isa")
 
