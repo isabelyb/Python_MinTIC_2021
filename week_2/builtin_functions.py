@@ -54,10 +54,9 @@ print(py_string[slice_object])   # yhn
 
 print(py_string[1:5:2]) # yh
 
+
 slice_object = slice(-1, -4, -1)
 print(py_string[slice_object])   # noh
-
-
 
 
         # Get sublist and sub-tuple
