@@ -14,4 +14,4 @@ def qualify (paper, carton):
 
     return f"The qualify is: {response}"
 
-print(qualify(True, True))
+print(qualify(False, False))
