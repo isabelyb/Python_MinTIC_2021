@@ -10,7 +10,8 @@ def student_notes(name, note1, note2, note3, note4, note5):
     elif (note_average >= 4):
         qualification = "high"
 
-    return f"The {name}'s average note is {note_average}, the maximun note is {maximum} and the minimum note is {minimum}. The qualification is {qualification}"
+    return f"The {name}'s average note is {note_average}, the maximun note is {maximum} and \
+         the minimum note is {minimum}. The qualification is {qualification}"
 
 
 print (student_notes("Juan", 4.5, 4.8, 2.3, 4.2, 0.5)) 
