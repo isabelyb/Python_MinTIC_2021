@@ -8,18 +8,27 @@ datos_basicos = {
     "estado_civil":"Soltero"
 }
 
-clave = datos_basicos.keys()            # llaves
-valor = datos_basicos.values()          # valores              
-cantidad_datos = datos_basicos.items()  # agrupa todo en una lista
-cantidad = len(datos_basicos)
-
-for clave, valor in cantidad_datos:
-    print(f"{clave}: {valor}")
-
-print(cantidad)
-
-# cantidad = sum(map(len, numeros.values()))
+# clave = datos_basicos.keys()            # llaves
+# print(clave)
+# valor = datos_basicos.values()          # valores
+# print(valor)           
+# cantidad_datos = datos_basicos.items()  # agrupa todo en una lista
+# print(cantidad_datos)
+# cantidad = len(datos_basicos)
 # print(cantidad)
 
-for clave in cantidad_datos:
-    print(f"{clave}: {datos_basicos} ")   # error para corregir
+# for clave, valor in cantidad_datos:
+#     print(f"{clave}: {valor}")
+
+
+#acceder a la clave mediante el valor:
+
+def print_llaves(val):
+    for clave, valor in datos_basicos.items():
+        if val == valor:
+            return clave
+            
+    return "La clave no existe"        
+                  
+print(print_llaves("Leonardo Jose"))
+ 
