@@ -15,21 +15,10 @@
 # print (ultimo == "4")
 # print (ultimo == "8")
 
-numero = 18
 
-def num_primo():
-    divisor = 1
-    while divisor != 1 and divisor != numero and divisor < 20:
-        numero / divisor
-        divisor += 1
-        if numero %divisor == 0:
-            print("No es primo")
-        else:
-            print("Es primo")
-
-
-print(num_primo())
-
+lista = [2,5,8,9,6,1]
+mayor = max(lista)
+print(mayor in lista[2:3])
 
 # def num():
 #     try:

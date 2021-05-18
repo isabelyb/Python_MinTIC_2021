@@ -27,6 +27,7 @@ def num_primo_positivo():
 
 
 #5.Leer un número entero de dos dígitos y determinar si es primo y además si es negativo
+  # Aunque por definición los numeros primos son positivos
 
 
 def num_primo_negativo():
