@@ -16,9 +16,16 @@
 # print (ultimo == "8")
 
 
-lista = [2,5,8,9,6,1]
-mayor = max(lista)
-print(mayor in lista[2:3])
+# lista = [2,5,8,9,6,1]
+# mayor = max(lista)
+# print(mayor in lista[2:3])
+
+palabra = "hola"
+lista = list(palabra)
+print(lista)
+
+palabra_nueva = str(lista)
+print(palabra_nueva)
 
 # def num():
 #     try:
