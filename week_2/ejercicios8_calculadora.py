@@ -12,3 +12,13 @@ que el cero no puede ser dividido.
 Recomendaciones para la validación: buscar información en Google sobre valores ASCII
 y tabla ASCII investigue el funcionamiento de la función ord()
 """
+
+def main():
+    pass
+
+
+
+
+
+if __name__ == '__main__':
+    main()
