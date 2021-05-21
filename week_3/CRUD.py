@@ -35,8 +35,7 @@ def leer(tareas):
     for i in tareas:  # i toma los valores de las tareas
         print(i,"-\t",end="")
         for j in tareas[i]: # toma los valores de los valores
-            print(tareas[i][j], ",", end="")
-            #print(tareas[i][j], sep="-",)
+            print(tareas[i][j], "| ", end="")
         print()
 
 def buscar(identificador, tareas):
@@ -52,18 +51,22 @@ def actualizar(tareas, identificador, nuevo_estado, nueva_descripción, nuevo_ti
     tareas[identificador]["tiempo"] = nuevo_tiempo
     return print("\n<<<<TAREA ACTUALIZADA>>>>\n")  
 
-
-
+def eliminar_tarea(identificador):
+    for i in tareas:
+        if identificador == tareas[i]:
+            del tareas[identificador]
+    print(tareas[i])
+    print (f"\nLa tarea {tareas[identificador]} ha sido satisfactoriamente eliminada\n")
+    
 # Interfaz - Menú
 estado = True
 while estado:
-    print("Aplicación CRUD manejo de tareas")
-    print()
+    print("\n<<<<APLICACIÓN CRUD - MANEJO DE TAREAS>>>>\n")
     print("1. Adicionar tarea")
     print("2. Consultar tarea")
     print("3. Actualizar tarea")
     print("4. Eliminar tarea")
-    print("5. Salir")
+    print("5. Salir\n")
     opcion = int(input("Ingrese una opción: "))
     if opcion == 5:
         estado = False
@@ -99,7 +102,10 @@ while estado:
             
 
     elif opcion == 4:
-        pass
+        print("\n<<<<ELIMINAR TAREA>>>>\n")
+        identificador = int(input("Ingrese el Identificador de la tarea a eliminar: "))
+        eliminar_tarea(identificador)
+
 
     else:
         print("Digite una opción válida\n")
