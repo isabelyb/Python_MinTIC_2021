@@ -20,12 +20,21 @@
 # mayor = max(lista)
 # print(mayor in lista[2:3])
 
-palabra = "hola"
-lista = list(palabra)
-print(lista)
+# palabra = "hola"
+# lista = list(palabra)
+# print(lista)
 
-palabra_nueva = str(lista)
-print(palabra_nueva)
+# palabra_nueva = str(lista)
+# print(palabra_nueva)
+
+datos_tanque = {
+'codigoTanque': 'TA001',
+'sensor1':'estado',
+'sensor2':'estado',
+'sensor3':'estado'
+}
+
+print(datos_tanque['codigoTanque'])
 
 # def num():
 #     try:
