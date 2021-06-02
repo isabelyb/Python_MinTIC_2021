@@ -8,17 +8,39 @@ datos = [
 
 
 codigo = '020008'
-sensores = (1,0,0,1,0)
+sensores = (1,0,0,1,1,0)
 
 def monitoreo(codigo,sensores):
     salida = []
+    lista = []
+
     for i in range(len(datos)):
         if datos[i]['codigo'] == codigo:
-            salida.append({'codigo_cliente': codigo, 'direccion': datos[i]['dir'], 'cantidad_guardias': 'guardias', 'sensores_activos': sum(sensores), 'estado_sensores': 'status'})
+            salida.append({'codigo_cliente': codigo, 'direccion': datos[i]['dir']})
 
-    return salida
+            if datos[i]['zona'] == 1:
+                salida.append({'cantidad_guardias':'3 guardias'})
+            else:
+                salida.append({'cantidad_guardias':'2 guardias'})
 
+            salida.append({'sensores_activos': sum(sensores)})
+
+
+            if datos[i]['sensores'] == len(sensores):
+                salida.append({'estado_sensores':'correcto'})
+            else:
+                salida.append({'estado_sensores':'revisar'})
+
+            unir_diccionarios = {}
+            for diccionario in salida:
+                unir_diccionarios.update(diccionario)
+
+            lista.append(unir_diccionarios.copy())
+
+    return lista
+        
 print(monitoreo(codigo,sensores))
+    
 
 # [{'codigo_cliente': '020008', 'direccion': 'cr 84 70 27 Bod 4', 'cantidad_guardias': '2 guardias', 'sensores_activos': 2, 'estado_sensores': 'revisar'}]
     

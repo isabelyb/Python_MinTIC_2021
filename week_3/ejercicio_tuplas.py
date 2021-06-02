@@ -22,3 +22,10 @@ for i in range(4):
     if datos[i]["id"] in identificacion:
         nueva_lista.append(datos[i])
 print(nueva_lista)
+
+
+nueva_lista1 = []
+for i in range(4):
+    if datos[i]["id"] in identificacion:
+        nueva_lista1.append(datos[i])
+print(nueva_lista1)
