@@ -23,6 +23,7 @@ def monitoreo(codigo,sensores):
             else:
                 salida.append({'cantidad_guardias':'2 guardias'})
 
+            
             salida.append({'sensores_activos': sum(sensores)})
 
 
