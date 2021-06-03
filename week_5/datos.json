@@ -1,0 +1,19 @@
+{
+    "clientes": [
+        {
+            "codigo": "010010",
+            "nom": "Juan P\u00e9rez",
+            "dir": "cr 30 25 80"
+        },
+        {
+            "codigo": "020008",
+            "nom": "Carolina Charris",
+            "dir": "cr 84 70 27 Bod 4"
+        },
+        {
+            "codigo": "020114",
+            "nom": "Omar Acosta",
+            "dir": "cr 30 25 80"
+        }
+    ]
+}
