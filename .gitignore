@@ -149,4 +149,8 @@ Thumbs.db
 
 # code editor
 
-.vscode
+*.vscode
+
+# Documents in PDF
+
+*.pdf

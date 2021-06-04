@@ -1,16 +1,18 @@
 #Librería para interacción por consola (interfaz)
 #################################################
 
-#Presentar mensaje genérico en pantalla
+
+#Presentar mensaje genérico en pantalla. Este se va a generar dependiendo de la opción.
 def mensaje(info=''):
     print()
     print(info)
     print()
 
+
 #Formulario menú aplicación CRUD
 def formularioMenuAppCRUD():
     print(" ")
-    print("-- Aplicación CRUD TareasPendientes ---")
+    print(">>> Aplicación CRUD: GESTIONADOR DE TAREAS <<<\n")
     print("1. Adicionar Tarea")
     print("2. Consultar Tareas")
     print("3. Actualizar Tarea")
@@ -21,12 +23,14 @@ def formularioMenuAppCRUD():
     opcion = None
     while opcion == None:
         try:
-            opcion = int(input("Ingrese una opción: "))
+            opcion = int(input("\nIngrese una opción: "))
         except:        
             print("Entrada inválida: Se debe ingresar una opción numérica.")    
 
     #Retornar opción al controlador
     return opcion
+
+
 
 #Función de validación en la colección recibida del controlador           
 def estaElemento(identificador, tareas):
@@ -40,6 +44,8 @@ def estaElemento(identificador, tareas):
     else:
         return False 
 
+
+
 #Formulario para adicionar tareas (Create)
 def formularioAdicionarTarea():
     #Recoger los campos de la tarea
@@ -50,7 +56,7 @@ def formularioAdicionarTarea():
     tiempo = None
     while tiempo == None:
         try:
-            tiempo = int(input("Ingrese el tiempo de realización: "))
+            tiempo = int(input("Ingrese el tiempo de realización en minutos: "))
         except:
             print("Entrada inválida: Se debe ingresar un tiempo numérico.")
     #Encapsular la nueva tarea
@@ -61,6 +67,8 @@ def formularioAdicionarTarea():
                 }
     #Retornar al controlador el identificador y la nueva tarea
     return identificador,tareaNueva
+
+
 
 #Formulario para actualización de tareas
 def formularioActualizarTarea(tareas):   
@@ -78,7 +86,7 @@ def formularioActualizarTarea(tareas):
         #Capturar el tiempo validando el tipo de dato ingresado        
         nuevoTiempo = '' #Alternativa a nulo, para conservar el tiempo anterior        
         try:
-            nuevoTiempo = int(input('Nuevo tiempo de realización: '))
+            nuevoTiempo = int(input('Nuevo tiempo de realización en minutos: '))
         except:
             print("Entrada inválida: Se debe ingresar un tiempo numérico.")
 
@@ -92,10 +100,12 @@ def formularioActualizarTarea(tareas):
         #Retornar el identificador de la tarea con los campos actualizados
         return identificador,tareaActualizada
 
-    else:
+    else: # si se introduce un identificador que no existe.
 
         print("No ha sido encontrada la Tarea para actualización!")
         return False
+
+
 
 #Formulario para eliminación de tareas
 def formularioEliminarTarea(tareas):
@@ -111,11 +121,13 @@ def formularioEliminarTarea(tareas):
         print("No ha sido encontrada la Tarea para eliminación!")
         return False
 
+
+
 #Presentación de las tareas que llegan del controlador
 def mostrarTareas(tareas):
     for identificador, tarea in tareas.items():    
-        print(identificador,' - ',end='')
+        print(identificador,'- ',end='')
         for nombre_atributo, atributo in tarea.items():
-            print(atributo, ', ', end='')
+            print(atributo, '| ', end='')
         print()
 

@@ -1,10 +1,12 @@
 #Aplicación CRUD (Controlador) - Lista de Tareas Pendientes
 ###########################################################
 
+
 #Librerías (capas)
 import CRUD #Capa lógica o backend básico
 import InterfazConsola as ic #Interfaz para interacción con el usuario UI
-import sys #API para comunicar la App con funciones del sistema operativo
+import sys #API para comunicar la App con funciones del sistema operativo, esto es para salir de la aplicación
+
 
 #Carga de la base de datos de la aplicación (archivo json)
 tareas = CRUD.Read()
@@ -23,7 +25,7 @@ while mainloop:
     if opcion == 1:        
 
         #Solicitar a la interfaz mostrar el mensaje
-        ic.mensaje("->Adicionando Tarea")
+        ic.mensaje("-> Adicionando Tarea")
 
         #Presentar formulario para encapsular ingreso de datos en diccionario tareaNueva
         identificador,tareaNueva = ic.formularioAdicionarTarea()
@@ -35,7 +37,7 @@ while mainloop:
     elif opcion == 2:
 
         #Solicitar a la interfaz mostrar el mensaje
-        ic.mensaje("->Listado de Tareas")       
+        ic.mensaje("-> Listado de Tareas")       
 
         #Solicitar a la interfaz que muestre la base de datos de tareas cargada
         ic.mostrarTareas(tareas)              
@@ -44,7 +46,7 @@ while mainloop:
     elif opcion == 3:
 
         #Solicitar a la interfaz mostrar el mensaje
-        ic.mensaje("->Actualizar Tarea")       
+        ic.mensaje("-> Actualizar Tarea")       
 
         #Presentar formulario de actualización de tareas
         respuestaInterfaz = ic.formularioActualizarTarea(tareas)
@@ -60,7 +62,7 @@ while mainloop:
     elif opcion == 4:
 
         #Solicitar a la interfaz mostrar el mensaje
-        ic.mensaje("->Eliminar Tarea") 
+        ic.mensaje("-> Eliminar Tarea") 
 
         #Presentar formulario de eliminación de tareas
         identificador = ic.formularioEliminarTarea(tareas)
@@ -70,11 +72,11 @@ while mainloop:
             #Realizar la eliminación si llega autorización desde la interfaz (identificador)
             CRUD.Delete(tareas,identificador)    
 
-    #Si la opcíon de salida fue seleccionadA por el usuario en el menú    
+    #Si la opcíon de salida fue seleccionada por el usuario en el menú    
     elif opcion == 5:
         
         #Solicitar a la interfaz mostrar el mensaje
-        ic.mensaje("->Eliminar Tarea") 
+        ic.mensaje("-> Ha salido de la aplicación") 
 
         #Guardar el listado de tareas en la base de datos (archivo json)
         if CRUD.Write(tareas):            
@@ -87,4 +89,4 @@ while mainloop:
     else:
 
         #Solicitar a la interfaz mostrar el mensaje
-        ic.mensaje("Opción inválida!")
+        ic.mensaje("¡Opción inválida!")
