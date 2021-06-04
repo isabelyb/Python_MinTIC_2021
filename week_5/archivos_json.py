@@ -9,7 +9,7 @@ datos['clientes'].append({'codigo': '020008','nom': 'Carolina Charris','dir': 'c
 datos['clientes'].append({'codigo': '020114','nom': 'Omar Acosta','dir': 'cr 30 25 80'})
 
 with open('datos.json','w') as file:
-    json.dump(datos, file, indent=4)
+    json.dump(datos, file, indent=4, ensure_ascii=False)
 
 
 # Para leerlo

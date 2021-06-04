@@ -10,37 +10,67 @@
 
 # print(list(a))
 
+'''
+# Abre el archivo para escribir y elimina los archivos anteriores si existen
+fic = open("Archivos/text.txt", "w")
 
+# Abre el archivo para agregar contenido
+fic = open("Archivos/text.txt", "a")
 
-# w = write
-# r = read
-# a = add
+# Abre el archivo en modo lectura
+fic = open("Archivos/text.txt", "r")
 
-#abriendo archivos txt
+fic.close()
+'''
 
-#para leer r, escribir w (borra lo que tiene y escribe datos), añadir a (añade datos en la ultima linea)
-a = (open("C:/1. AYDA/6. UTP/Unidad5/datos.txt", "r"))   
-print (list(a))
-a.close         # siempre que se hace un open se deb cerrar con un close
+data = ["Línea 1", "Línea 2", "Línea 3", "Línea 4", "Línea 5"]
 
-#AÑADIENDO CODIGO AL ARCHIVO
-lista1 = ["ecuador", "peru", "Brasil", "Mexico"]
-b = (open("C:/1. AYDA/6. UTP/Unidad5/datos.txt", "a"))   # AÑADIENDO SIN BORRAR   
-for i in lista1:
-    b.write(i)
-    b.write("\n")
-b.close 
+#Escribir archivos de texto en Python
+fic = open("text_1.txt", "w")
 
+for line in data:
+    fic.write(line)
+    fic.write("\n")
+    
+fic.close()
 
-'lista1 = ['Maicao','Meta', 'Leticia', 'Medellin']
-a = open('ciudadesP65.txt', 'w') #r: lectura, w: escritura y a:añadir
-for i in lista1:
-    a.write(i)
-    a.write('\n')
-a.close()
-b = open('ciudadesP65.txt','r')
-lista1 = list(b)
-print(lista1)
-lista2 = [x.rstrip('\n') for x in lista1]
-print(lista2)
-b.close()
+#Escribir el archivo línea a línea¶
+fic = open("text_2.txt", "w")
+
+for line in data:
+    print(line, file=fic)
+    
+fic.close()
+
+#Escribir el archivo de una vez
+fic = open("text_3.txt", "w")
+fic.writelines("%s\n" % s for s in data)
+fic.close()
+
+#Leer archivos de texto en Python
+
+fic = open('text_1.txt', "r")
+lines = fic.readlines()
+print(lines)
+fic.close()
+
+fic = open('text_1.txt', "r")
+lines = list(fic)
+print(lines)
+fic.close()
+
+#Leer el archivo línea a línea
+
+fic = open('text_1.txt', "r")
+lines = []
+
+for line in fic:
+    lines.append(line)
+print(lines)
+
+fic.close()
+
+#Eliminar los saltos de línea en el archivo importado
+
+lines1 = [s.rstrip('\n') for s in lines]
+print(lines1)
