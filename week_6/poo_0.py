@@ -1,9 +1,9 @@
 class persona:
     def __init__(self, nombre, edad):
         self.Nombre = nombre #atributos con init
-        self.Edad = edad #atribuots con init
+        self.Edad = edad #atributos con init
 
-    def imprimir(self):
+    def imprimir(self): # método
         print('Hola, me llamo', self.Nombre)
 
 objeto_1 = persona('Juan', 25)
