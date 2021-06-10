@@ -19,6 +19,7 @@ print(resultado)
 
 # map con mas de un argumento y una lista:
 
+
 numeros = [2,3,4]
 potencias = [3,2,4]
 
@@ -40,7 +41,7 @@ def mayor_a_cinco(elemento):
 tupla = (5,2,6,7,8,10,77,55,2,1,30,4,2,3)
 resultado = tuple(filter(mayor_a_cinco, tupla))
 print(len(resultado))
-print(resultado)
+print('filter', resultado)
 
 # filter y lambda:
 
@@ -92,3 +93,12 @@ apellidos = ['Perez', 'Sanchez Caro', 'Gonzalez']
 
 nombre_apellido = list(zip(nombres, apellidos))
 print(nombre_apellido)
+
+a = [2,4,6]
+b = [1,3,5]
+
+c = list(zip(a,b))
+print(c)
+
+d = list(c[1])
+print(d)
