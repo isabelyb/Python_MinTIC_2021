@@ -12,6 +12,8 @@ def mult_1_2(lista):
         True
     return lista[1]*lista[2]
 
+print(orden[1][1][1:])
+
 cant_x_precio = [tuple(map(mult_1_2, (orden[i][1:]))) for i in range(len(orden))]
 print(cant_x_precio)
 
