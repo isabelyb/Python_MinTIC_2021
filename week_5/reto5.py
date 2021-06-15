@@ -16,48 +16,42 @@ Opción 5: total de voluntarios enlistados.
 3. Obtenga la información descrita anteriormente según la opción escogida.
 '''
 import pandas as pd
-import numpy as np
 
-datos = pd.read_csv('https://raw.githubusercontent.com/marinacharris/retos/main/Voluntarios.csv')
 
 def funcion1(ruta_archivo, opcion):
-    salida = {}
 
-
+    datos = datos = pd.read_csv(ruta_archivo, header=None) 
     df = pd.DataFrame(datos)
     df.columns = ['id_voluntario','nombre','codigo_playa','peso_recolectado']
 
-    salida = {}
-
     if opcion == 1:
-        pass
-#        salida = {codigo_playa: cantidad_voluntarios}
+        df_voluntarios = df.groupby(df['codigo_playa']).count()
+        salida = {df_voluntarios.index[i]:df_voluntarios['id_voluntario'][df_voluntarios.index[i]] for i in range(len(df_voluntarios))}
     elif opcion == 2:
-         pass
-#        salida = {codigo_playa: total_recolectado}
+        df_peso = df.groupby(df['codigo_playa']).sum()
+        salida = {df_peso.index[i]:df_peso['peso_recolectado'][df_peso.index[i]] for i in range(len(df_peso))}
     elif opcion == 3:
         max_recolectado = max(df['peso_recolectado'])
         salida = {'Máximo recolectado en una playa': max_recolectado}
     elif opcion == 4:
-        pass
-#        salida = {'Total recolectado': xxxx}
+        total_recoleccion = sum(df['peso_recolectado'])
+        salida = {'Total recolectado': total_recoleccion}
     elif opcion == 5:
-         pass
-#        salida = {'Total voluntarios': xxxx}
+        total_voluntarios = df['id_voluntario'].count()
+        salida = {'Total voluntarios': total_voluntarios}
     else:
         salida = {}
 
 
-    
-
-
     return salida
-
-#Salida: Dict Opción 1: {codigo_playa:cantidad_voluntarios, ...}  -> codigo_playa: int - cantidad_voluntarios: int
-
 
 
 '''Casos Públicos'''
-# print(funcion1('https://raw.githubusercontent.com/marinacharris/retos/main/Voluntarios.csv',1))
-# print(funcion1('https://raw.githubusercontent.com/marinacharris/retos/main/Voluntarios.csv',2))
+print(funcion1('https://raw.githubusercontent.com/marinacharris/retos/main/Voluntarios.csv',1))
+print(funcion1('https://raw.githubusercontent.com/marinacharris/retos/main/Voluntarios.csv',2))
 print(funcion1('https://raw.githubusercontent.com/marinacharris/retos/main/Voluntarios.csv',3))
+
+
+print(funcion1('https://raw.githubusercontent.com/marinacharris/retos/main/Voluntarios.csv',4))
+print(funcion1('https://raw.githubusercontent.com/marinacharris/retos/main/Voluntarios.csv',5))
+print(funcion1('https://raw.githubusercontent.com/marinacharris/retos/main/Voluntarios.csv',6))
