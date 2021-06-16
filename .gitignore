@@ -154,3 +154,12 @@ Thumbs.db
 # Documents in PDF
 
 *.pdf
+
+
+# Imágenes
+
+*.gif
+*.png
+*.ico 
+*.xbm
+
